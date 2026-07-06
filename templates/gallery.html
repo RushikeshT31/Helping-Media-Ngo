@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Helping Hands NGO | Gallery</title>
+
+<!-- Bootstrap -->
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Custom CSS -->
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="/">
+
+<i class="fas fa-hand-holding-heart"></i>
+
+Helping Hands NGO
+
+</a>
+
+<button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbarNav">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+
+<a class="nav-link" href="/">
+
+Home
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="/media">
+
+Media
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link active" href="/gallery">
+
+Gallery
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="/videos">
+
+Videos
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="/contact">
+
+Contact
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a href="/login"
+class="btn btn-warning ms-3">
+
+<i class="fas fa-user-shield"></i>
+
+Admin Login
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="bg-primary text-white text-center py-5">
+
+<div class="container">
+
+<span class="badge bg-warning text-dark px-3 py-2 fs-6 mb-3">
+
+<i class="fas fa-camera"></i>
+
+Helping Hands NGO Gallery
+
+</span>
+
+<h1 class="display-3 fw-bold">
+
+Our Journey Through Pictures
+
+</h1>
+
+<p class="lead mt-3">
+
+Explore memorable moments from our education programs,
+medical camps, food distribution drives,
+tree plantation campaigns,
+volunteer activities,
+women empowerment initiatives
+and community development projects.
+
+</p>
+
+<a href="#gallery"
+
+class="btn btn-warning btn-lg rounded-pill mt-3">
+
+<i class="fas fa-images"></i>
+
+Explore Gallery
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= FEATURED GALLERY ================= -->
+
+<section class="py-5 bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<span class="badge bg-danger px-3 py-2">
+
+<i class="fas fa-star"></i>
+
+Featured Activities
+
+</span>
+
+<h2 class="display-5 fw-bold text-primary mt-3">
+
+Our Community Programs
+
+</h2>
+
+<p class="lead text-muted">
+
+Helping Hands NGO works continuously to improve lives
+through education,
+healthcare,
+environment protection,
+food distribution
+and volunteer engagement.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<!-- Education -->
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card gallery-card shadow border-0 h-100">
+
+<img
+src="{{ url_for('static', filename='images/education.jpg') }}"
+class="card-img-top"
+style="height:260px;object-fit:cover;">
+
+<div class="card-body">
+
+<h4 class="text-primary">
+
+<i class="fas fa-graduation-cap"></i>
+
+Education Support
+
+</h4>
+
+<p>
+
+Providing books,
+scholarships,
+digital education,
+career guidance
+and learning opportunities
+for underprivileged children.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Medical -->
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card gallery-card shadow border-0 h-100">
+
+<img
+src="{{ url_for('static', filename='images/medical.jpg') }}"
+class="card-img-top"
+style="height:260px;object-fit:cover;">
+
+<div class="card-body">
+
+<h4 class="text-danger">
+
+<i class="fas fa-heartbeat"></i>
+
+Healthcare Camps
+
+</h4>
+
+<p>
+
+Free medical check-ups,
+medicine distribution,
+blood donation camps
+and health awareness programs.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Food -->
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card gallery-card shadow border-0 h-100">
+
+<img
+src="{{ url_for('static', filename='images/food.jpg') }}"
+class="card-img-top"
+style="height:260px;object-fit:cover;">
+
+<div class="card-body">
+
+<h4 class="text-warning">
+
+<i class="fas fa-utensils"></i>
+
+Food Distribution
+
+</h4>
+
+<p>
+
+Serving nutritious meals
+to children,
+families,
+senior citizens
+and disaster-affected communities.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Tree Plantation -->
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card gallery-card shadow border-0 h-100">
+
+<img
+src="{{ url_for('static', filename='images/plantation.jpg') }}"
+class="card-img-top"
+style="height:260px;object-fit:cover;">
+
+<div class="card-body">
+
+<h4 class="text-success">
+
+<i class="fas fa-tree"></i>
+
+Tree Plantation
+
+</h4>
+
+<p>
+
+Protecting nature through
+tree plantation drives,
+cleanliness campaigns
+and environmental awareness.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Women -->
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card gallery-card shadow border-0 h-100">
+
+<img
+src="{{ url_for('static', filename='images/women.jpg') }}"
+class="card-img-top"
+style="height:260px;object-fit:cover;">
+
+<div class="card-body">
+
+<h4 class="text-info">
+
+<i class="fas fa-hand-holding-heart"></i>
+
+Women Empowerment
+
+</h4>
+
+<p>
+
+Skill development,
+self-employment training,
+education
+and financial awareness
+for women.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Volunteers -->
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card gallery-card shadow border-0 h-100">
+
+<img
+src="{{ url_for('static', filename='images/volunteer.jpg') }}"
+class="card-img-top"
+style="height:260px;object-fit:cover;">
+
+<div class="card-body">
+
+<h4 class="text-primary">
+
+<i class="fas fa-users"></i>
+
+Volunteer Activities
+
+</h4>
+
+<p>
+
+Dedicated volunteers
+working together
+to create a better future
+through social service.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= DYNAMIC GALLERY ================= -->
+
+<section id="gallery" class="py-5">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<span class="badge bg-primary px-3 py-2">
+
+<i class="fas fa-images"></i>
+
+Live Gallery
+
+</span>
+
+<h2 class="display-5 fw-bold text-primary mt-3">
+
+Recent Gallery Photos
+
+</h2>
+
+<p class="lead text-muted">
+
+Browse the latest photographs uploaded by our administrators
+showcasing real NGO activities and memorable moments.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+{% if gallery %}
+
+{% for image in gallery %}
+
+<div class="col-lg-3 col-md-4 col-sm-6">
+
+<div class="gallery-card shadow">
+
+<img
+src="{{ url_for('static', filename='uploads/' + image.image) }}"
+class="img-fluid">
+
+<div class="gallery-overlay">
+
+<a
+href="{{ url_for('static', filename='uploads/' + image.image) }}"
+target="_blank"
+class="btn btn-light rounded-circle">
+
+<i class="fas fa-search-plus"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<div class="col-12">
+
+<div class="text-center p-5 bg-light rounded shadow">
+
+<i class="fas fa-camera-retro fa-5x text-primary mb-4"></i>
+
+<h2 class="fw-bold">
+
+Gallery Updates Coming Soon
+
+</h2>
+
+<p class="lead text-muted">
+
+Our latest event photographs, volunteer activities,
+education drives, medical camps and awareness programs
+will be displayed here after each successful event.
+
+</p>
+
+<a href="/media"
+class="btn btn-primary btn-lg rounded-pill">
+
+<i class="fas fa-newspaper"></i>
+
+Visit Media Center
+
+</a>
+
+</div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= GALLERY HIGHLIGHTS ================= -->
+
+<section class="py-5 bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="display-5 fw-bold text-success">
+
+Gallery Highlights
+
+</h2>
+
+<p class="lead text-muted">
+
+Every photograph reflects our commitment towards
+building stronger communities and creating positive change.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+
+<div class="card border-0 shadow h-100 text-center p-4">
+
+<i class="fas fa-school fa-4x text-primary mb-3"></i>
+
+<h4>
+
+Education Projects
+
+</h4>
+
+<p>
+
+Distribution of books,
+school kits,
+digital education,
+career guidance
+and scholarship support.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card border-0 shadow h-100 text-center p-4">
+
+<i class="fas fa-stethoscope fa-4x text-danger mb-3"></i>
+
+<h4>
+
+Health Camps
+
+</h4>
+
+<p>
+
+Free medical camps,
+health awareness,
+blood donation drives
+and medicine distribution.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card border-0 shadow h-100 text-center p-4">
+
+<i class="fas fa-seedling fa-4x text-success mb-3"></i>
+
+<h4>
+
+Green Environment
+
+</h4>
+
+<p>
+
+Tree plantation,
+cleanliness campaigns,
+plastic-free initiatives
+and environmental education.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= NGO STATISTICS ================= -->
+
+<section class="py-5 bg-primary text-white">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="display-5 fw-bold">
+
+Our Impact
+
+</h2>
+
+<p>
+
+Together we are making a difference.
+
+</p>
+
+</div>
+
+<div class="row text-center">
+
+<div class="col-md-3">
+
+<i class="fas fa-users fa-3x mb-3"></i>
+
+<h1 class="display-4 fw-bold">
+
+500+
+
+</h1>
+
+<p>
+
+Volunteers
+
+</p>
+
+</div>
+
+<div class="col-md-3">
+
+<i class="fas fa-briefcase fa-3x mb-3"></i>
+
+<h1 class="display-4 fw-bold">
+
+120+
+
+</h1>
+
+<p>
+
+Projects Completed
+
+</p>
+
+</div>
+
+<div class="col-md-3">
+
+<i class="fas fa-heart fa-3x mb-3"></i>
+
+<h1 class="display-4 fw-bold">
+
+50,000+
+
+</h1>
+
+<p>
+
+Lives Impacted
+
+</p>
+
+</div>
+
+<div class="col-md-3">
+
+<i class="fas fa-award fa-3x mb-3"></i>
+
+<h1 class="display-4 fw-bold">
+
+15+
+
+</h1>
+
+<p>
+
+Years of Service
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= EVENT CATEGORIES ================= -->
+
+<section class="py-5">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="display-5 fw-bold text-primary">
+
+Programs We Capture
+
+</h2>
+
+<p class="lead text-muted">
+
+Every event tells a story of hope,
+dedication and community service.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="card shadow border-0 text-center p-4">
+
+<i class="fas fa-book-open fa-3x text-primary mb-3"></i>
+
+<h5>
+
+Education
+
+</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card shadow border-0 text-center p-4">
+
+<i class="fas fa-heartbeat fa-3x text-danger mb-3"></i>
+
+<h5>
+
+Healthcare
+
+</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card shadow border-0 text-center p-4">
+
+<i class="fas fa-tree fa-3x text-success mb-3"></i>
+
+<h5>
+
+Environment
+
+</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card shadow border-0 text-center p-4">
+
+<i class="fas fa-hands-helping fa-3x text-warning mb-3"></i>
+
+<h5>
+
+Community Service
+
+</h5>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= COMMUNITY IMPACT ================= -->
+
+<section class="py-5 bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<span class="badge bg-success px-3 py-2">
+
+<i class="fas fa-globe"></i>
+
+Community Impact
+
+</span>
+
+<h2 class="display-5 fw-bold text-success mt-3">
+
+Creating Positive Change
+
+</h2>
+
+<p class="lead text-muted">
+
+Our gallery reflects the lives we have touched through
+education, healthcare, environmental conservation,
+food distribution and community development.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card shadow border-0 h-100 text-center p-4">
+
+<i class="fas fa-graduation-cap fa-4x text-primary mb-3"></i>
+
+<h4>Education</h4>
+
+<p>
+
+2,500+ students supported with
+books, uniforms and scholarships.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card shadow border-0 h-100 text-center p-4">
+
+<i class="fas fa-heartbeat fa-4x text-danger mb-3"></i>
+
+<h4>Healthcare</h4>
+
+<p>
+
+10,000+ beneficiaries received
+free medical check-ups and medicines.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card shadow border-0 h-100 text-center p-4">
+
+<i class="fas fa-tree fa-4x text-success mb-3"></i>
+
+<h4>Environment</h4>
+
+<p>
+
+15,000+ trees planted through
+green awareness campaigns.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card shadow border-0 h-100 text-center p-4">
+
+<i class="fas fa-utensils fa-4x text-warning mb-3"></i>
+
+<h4>Food Support</h4>
+
+<p>
+
+Thousands of meals distributed
+to needy families every year.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= VOLUNTEER SECTION ================= -->
+
+<section class="py-5">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<img
+src="{{ url_for('static', filename='images/volunteer-team.jpg') }}"
+class="img-fluid rounded shadow">
+
+</div>
+
+<div class="col-lg-6">
+
+<h2 class="fw-bold text-primary">
+
+Our Volunteers
+
+</h2>
+
+<p class="lead">
+
+Our dedicated volunteers are the backbone of Helping Hands NGO.
+They actively participate in education drives, medical camps,
+food distribution, environmental campaigns and disaster relief.
+
+</p>
+
+<ul class="list-group list-group-flush">
+
+<li class="list-group-item">
+
+<i class="fas fa-check-circle text-success"></i>
+
+Education Support
+
+</li>
+
+<li class="list-group-item">
+
+<i class="fas fa-check-circle text-success"></i>
+
+Medical Camps
+
+</li>
+
+<li class="list-group-item">
+
+<i class="fas fa-check-circle text-success"></i>
+
+Tree Plantation
+
+</li>
+
+<li class="list-group-item">
+
+<i class="fas fa-check-circle text-success"></i>
+
+Food Distribution
+
+</li>
+
+<li class="list-group-item">
+
+<i class="fas fa-check-circle text-success"></i>
+
+Community Awareness
+
+</li>
+
+</ul>
+
+<a href="/contact" class="btn btn-primary btn-lg mt-4 rounded-pill">
+
+<i class="fas fa-users"></i>
+
+Become a Volunteer
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SUCCESS STORIES ================= -->
+
+<section class="py-5 bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="display-5 fw-bold text-primary">
+
+Success Stories
+
+</h2>
+
+<p class="lead text-muted">
+
+Real experiences shared by our beneficiaries and volunteers.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0 h-100 p-4 text-center">
+
+<i class="fas fa-quote-left fa-3x text-primary mb-3"></i>
+
+<p>
+
+Helping Hands NGO supported my education and inspired me
+to continue my studies with confidence.
+
+</p>
+
+<h5 class="text-primary">
+
+Anjali Patil
+
+</h5>
+
+<small class="text-muted">
+
+Student
+
+</small>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0 h-100 p-4 text-center">
+
+<i class="fas fa-quote-left fa-3x text-success mb-3"></i>
+
+<p>
+
+Volunteering here has taught me teamwork,
+leadership and the joy of helping others.
+
+</p>
+
+<h5 class="text-success">
+
+Rahul Deshmukh
+
+</h5>
+
+<small class="text-muted">
+
+Volunteer
+
+</small>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0 h-100 p-4 text-center">
+
+<i class="fas fa-quote-left fa-3x text-danger mb-3"></i>
+
+<p>
+
+The free health camp provided timely treatment
+and medicines for our entire family.
+
+</p>
+
+<h5 class="text-danger">
+
+Sunita Joshi
+
+</h5>
+
+<small class="text-muted">
+
+Beneficiary
+
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="py-5 bg-primary text-white text-center">
+
+<div class="container">
+
+<h2 class="display-5 fw-bold">
+
+Together We Can Build a Better Tomorrow
+
+</h2>
+
+<p class="lead">
+
+Every contribution makes a difference.
+Support our mission through volunteering,
+donations and community participation.
+
+</p>
+
+<div class="mt-4">
+
+<a href="/contact"
+class="btn btn-warning btn-lg rounded-pill me-3">
+
+<i class="fas fa-envelope"></i>
+
+Contact Us
+
+</a>
+
+<a href="/media"
+class="btn btn-light btn-lg rounded-pill">
+
+<i class="fas fa-newspaper"></i>
+
+Media Center
+
+</a>
+
+</div>
+
+</div>
+
+</section>

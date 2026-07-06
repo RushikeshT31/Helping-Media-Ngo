@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | Helping Hands NGO</title>
+
+<!-- Bootstrap -->
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Custom CSS -->
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="bg-light">
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="/">
+
+<i class="fas fa-hand-holding-heart"></i>
+
+Helping Hands NGO Admin
+
+</a>
+
+<div class="ms-auto">
+
+<a href="/" class="btn btn-success me-2">
+
+<i class="fas fa-home"></i>
+
+Website
+
+</a>
+
+<a href="/logout" class="btn btn-danger">
+
+<i class="fas fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- ================= DASHBOARD HEADER ================= -->
+
+<section class="py-5 bg-primary text-white">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-8">
+
+<h1 class="display-4 fw-bold">
+
+Welcome Administrator
+
+</h1>
+
+<p class="lead">
+
+Manage your NGO website content from one place.
+Add press releases, update media coverage,
+upload gallery images and manage videos.
+
+</p>
+
+<div class="mt-4">
+
+<a href="#press" class="btn btn-warning btn-lg me-3">
+
+<i class="fas fa-newspaper"></i>
+
+Manage Press
+
+</a>
+
+<a href="#gallery" class="btn btn-light btn-lg">
+
+<i class="fas fa-images"></i>
+
+Gallery
+
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-4 text-center">
+
+<i class="fas fa-user-shield fa-8x opacity-75"></i>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= DASHBOARD STATISTICS ================= -->
+
+<div class="container mt-5">
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow-lg text-center h-100">
+
+<div class="card-body">
+
+<i class="fas fa-newspaper fa-3x text-primary mb-3"></i>
+
+<h1 class="fw-bold text-primary">
+
+{{ press|length }}
+
+</h1>
+
+<h5>
+
+Press Releases
+
+</h5>
+
+<p class="text-muted">
+
+Published News & Announcements
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow-lg text-center h-100">
+
+<div class="card-body">
+
+<i class="fas fa-tv fa-3x text-success mb-3"></i>
+
+<h1 class="fw-bold text-success">
+
+{{ coverage|length }}
+
+</h1>
+
+<h5>
+
+Media Coverage
+
+</h5>
+
+<p class="text-muted">
+
+News Portals & Articles
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow-lg text-center h-100">
+
+<div class="card-body">
+
+<i class="fas fa-images fa-3x text-warning mb-3"></i>
+
+<h1 class="fw-bold text-warning">
+
+{{ gallery|length }}
+
+</h1>
+
+<h5>
+
+Gallery Images
+
+</h5>
+
+<p class="text-muted">
+
+Uploaded Photos
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="card border-0 shadow-lg text-center h-100">
+
+<div class="card-body">
+
+<i class="fas fa-video fa-3x text-danger mb-3"></i>
+
+<h1 class="fw-bold text-danger">
+
+{{ videos|length }}
+
+</h1>
+
+<h5>
+
+Videos
+
+</h5>
+
+<p class="text-muted">
+
+YouTube & Campaign Videos
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= QUICK ACTIONS ================= -->
+
+<div class="row mt-5">
+
+<div class="col-12">
+
+<div class="card shadow border-0">
+
+<div class="card-header bg-dark text-white">
+
+<h3>
+
+<i class="fas fa-bolt"></i>
+
+Quick Actions
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<div class="row text-center g-4">
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow-sm h-100">
+
+<div class="card-body">
+
+<i class="fas fa-plus-circle fa-3x text-primary mb-3"></i>
+
+<h5>
+
+Add Press Release
+
+</h5>
+
+<p>
+
+Publish official NGO announcements.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow-sm h-100">
+
+<div class="card-body">
+
+<i class="fas fa-globe fa-3x text-success mb-3"></i>
+
+<h5>
+
+Add Media Link
+
+</h5>
+
+<p>
+
+Share newspaper and online articles.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow-sm h-100">
+
+<div class="card-body">
+
+<i class="fas fa-camera fa-3x text-warning mb-3"></i>
+
+<h5>
+
+Upload Images
+
+</h5>
+
+<p>
+
+Showcase NGO events and activities.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 shadow-sm h-100">
+
+<div class="card-body">
+
+<i class="fas fa-film fa-3x text-danger mb-3"></i>
+
+<h5>
+
+Add Videos
+
+</h5>
+
+<p>
+
+Share awareness campaigns and documentaries.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FLASH MESSAGE ================= -->
+
+{% with messages=get_flashed_messages(with_categories=true) %}
+
+{% if messages %}
+
+{% for category,message in messages %}
+
+<div class="alert alert-{{category}} mt-4">
+
+<i class="fas fa-circle-info"></i>
+
+{{message}}
+
+</div>
+
+{% endfor %}
+
+{% endif %}
+
+{% endwith %}
+
+<!-- ================= PRESS RELEASE MANAGEMENT ================= -->
+
+<section id="press" class="mt-5">
+
+<div class="card border-0 shadow-lg">
+
+<div class="card-header bg-primary text-white py-3">
+
+<h3 class="mb-0">
+
+<i class="fas fa-newspaper me-2"></i>
+
+Press Release Management
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<!-- Information -->
+
+<div class="alert alert-primary border-0">
+
+<h5>
+
+<i class="fas fa-circle-info"></i>
+
+Press Release Information
+
+</h5>
+
+<p class="mb-0">
+
+Use this section to publish official NGO announcements,
+campaign launches, success stories, awareness programs,
+upcoming events and important updates.
+
+</p>
+
+</div>
+
+<!-- Add Form -->
+
+<h4 class="text-primary mb-4">
+
+<i class="fas fa-plus-circle"></i>
+
+Add New Press Release
+
+</h4>
+
+<form method="POST" action="/add_press">
+
+<div class="row">
+
+<div class="col-lg-4 mb-3">
+
+<label class="form-label fw-bold">
+
+Title
+
+</label>
+
+<input
+type="text"
+name="title"
+class="form-control"
+placeholder="Enter Press Release Title"
+required>
+
+</div>
+
+<div class="col-lg-3 mb-3">
+
+<label class="form-label fw-bold">
+
+Publish Date
+
+</label>
+
+<input
+type="date"
+name="date"
+class="form-control"
+required>
+
+</div>
+
+<div class="col-lg-5 mb-3">
+
+<label class="form-label fw-bold">
+
+Description
+
+</label>
+
+<textarea
+name="description"
+class="form-control"
+rows="2"
+placeholder="Write a short description..."
+required></textarea>
+
+</div>
+
+</div>
+
+<div class="text-end">
+
+<button
+type="submit"
+class="btn btn-primary btn-lg">
+
+<i class="fas fa-paper-plane"></i>
+
+Publish Press Release
+
+</button>
+
+</div>
+
+</form>
+
+<hr class="my-5">
+
+<!-- Press Release List -->
+
+<h4 class="text-success mb-4">
+
+<i class="fas fa-list"></i>
+
+Published Press Releases
+
+</h4>
+
+<div class="table-responsive">
+
+<table class="table table-hover table-bordered align-middle">
+
+<thead class="table-primary">
+
+<tr>
+
+<th width="70">
+
+#
+
+</th>
+
+<th>
+
+Title
+
+</th>
+
+<th width="170">
+
+Date
+
+</th>
+
+<th>
+
+Description
+
+</th>
+
+<th width="140">
+
+Action
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% if press %}
+
+{% for item in press %}
+
+<tr>
+
+<td>
+
+<strong>{{ loop.index }}</strong>
+
+</td>
+
+<td>
+
+{{ item.title }}
+
+</td>
+
+<td>
+
+{{ item.date }}
+
+</td>
+
+<td>
+
+{{ item.description }}
+
+</td>
+
+<td class="text-center">
+
+<a
+href="/delete_press/{{ loop.index0 }}"
+class="btn btn-danger btn-sm">
+
+<i class="fas fa-trash"></i>
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+{% else %}
+
+<tr>
+
+<td colspan="5">
+
+<div class="text-center py-5">
+
+<i class="fas fa-newspaper fa-4x text-primary mb-3"></i>
+
+<h4>
+
+No Press Releases Published
+
+</h4>
+
+<p class="text-muted">
+
+Your published press releases will appear here.
+
+Start by creating your first announcement.
+
+</p>
+
+</div>
+
+</td>
+
+</tr>
+
+{% endif %}
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Dashboard Tips -->
+
+<div class="row mt-5">
+
+<div class="col-md-4">
+
+<div class="card border-0 bg-light h-100">
+
+<div class="card-body text-center">
+
+<i class="fas fa-bullhorn fa-3x text-primary mb-3"></i>
+
+<h5>
+
+Announcements
+
+</h5>
+
+<p>
+
+Share NGO achievements,
+campaign launches
+and event updates.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card border-0 bg-light h-100">
+
+<div class="card-body text-center">
+
+<i class="fas fa-calendar-check fa-3x text-success mb-3"></i>
+
+<h5>
+
+Upcoming Events
+
+</h5>
+
+<p>
+
+Keep visitors informed
+about future NGO activities
+and volunteer programs.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card border-0 bg-light h-100">
+
+<div class="card-body text-center">
+
+<i class="fas fa-award fa-3x text-warning mb-3"></i>
+
+<h5>
+
+Achievements
+
+</h5>
+
+<p>
+
+Highlight awards,
+recognition
+and community success stories.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MEDIA COVERAGE MANAGEMENT ================= -->
+
+<section id="coverage" class="mt-5">
+
+<div class="card border-0 shadow-lg">
+
+<div class="card-header bg-success text-white py-3">
+
+<h3 class="mb-0">
+
+<i class="fas fa-tv me-2"></i>
+
+Media Coverage Management
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<!-- Information -->
+
+<div class="alert alert-success border-0">
+
+<h5>
+
+<i class="fas fa-circle-info"></i>
+
+Media Coverage Information
+
+</h5>
+
+<p class="mb-0">
+
+Add newspaper articles, online news, television coverage,
+blog posts and media reports highlighting the activities,
+achievements and social impact of Helping Hands NGO.
+
+</p>
+
+</div>
+
+<!-- Add Media -->
+
+<h4 class="text-success mb-4">
+
+<i class="fas fa-plus-circle"></i>
+
+Add New Media Coverage
+
+</h4>
+
+<form method="POST" action="/add_coverage">
+
+<div class="row">
+
+<div class="col-lg-5 mb-3">
+
+<label class="form-label fw-bold">
+
+Media Title
+
+</label>
+
+<input
+type="text"
+name="title"
+class="form-control"
+placeholder="Enter News Title"
+required>
+
+</div>
+
+<div class="col-lg-5 mb-3">
+
+<label class="form-label fw-bold">
+
+Website URL
+
+</label>
+
+<input
+type="url"
+name="url"
+class="form-control"
+placeholder="https://example.com/news"
+required>
+
+</div>
+
+<div class="col-lg-2 mb-3 d-grid">
+
+<label class="form-label text-white">
+
+Add
+
+</label>
+
+<button
+type="submit"
+class="btn btn-success">
+
+<i class="fas fa-plus"></i>
+
+Add
+
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+<hr class="my-5">
+
+<!-- Coverage Table -->
+
+<h4 class="text-primary mb-4">
+
+<i class="fas fa-list"></i>
+
+Published Media Coverage
+
+</h4>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-hover align-middle">
+
+<thead class="table-success">
+
+<tr>
+
+<th width="70">
+
+#
+
+</th>
+
+<th>
+
+Media Title
+
+</th>
+
+<th>
+
+Website Link
+
+</th>
+
+<th width="140">
+
+Action
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% if coverage %}
+
+{% for item in coverage %}
+
+<tr>
+
+<td>
+
+<strong>{{ loop.index }}</strong>
+
+</td>
+
+<td>
+
+{{ item.title }}
+
+</td>
+
+<td>
+
+<a
+href="{{ item.url }}"
+target="_blank"
+class="text-decoration-none">
+
+<i class="fas fa-link text-success"></i>
+
+Visit Article
+
+</a>
+
+</td>
+
+<td class="text-center">
+
+<a
+href="/delete_coverage/{{ loop.index0 }}"
+class="btn btn-danger btn-sm">
+
+<i class="fas fa-trash"></i>
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+{% else %}
+
+<tr>
+
+<td colspan="4">
+
+<div class="text-center py-5">
+
+<i class="fas fa-globe fa-4x text-success mb-3"></i>
+
+<h4>
+
+No Media Coverage Added
+
+</h4>
+
+<p class="text-muted">
+
+Media articles, newspaper links and television
+coverage will appear here after being added.
+
+</p>
+
+</div>
+
+</td>
+
+</tr>
+
+{% endif %}
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Media Features -->
+
+<div class="row mt-5">
+
+<div class="col-md-4">
+
+<div class="card border-0 bg-light h-100">
+
+<div class="card-body text-center">
+
+<i class="fas fa-newspaper fa-3x text-primary mb-3"></i>
+
+<h5>
+
+Newspapers
+
+</h5>
+
+<p>
+
+Publish links to newspaper
+articles highlighting NGO events
+and achievements.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card border-0 bg-light h-100">
+
+<div class="card-body text-center">
+
+<i class="fas fa-globe fa-3x text-success mb-3"></i>
+
+<h5>
+
+Online News
+
+</h5>
+
+<p>
+
+Share links to online media,
+blogs and digital news portals
+covering your NGO.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card border-0 bg-light h-100">
+
+<div class="card-body text-center">
+
+<i class="fas fa-microphone fa-3x text-danger mb-3"></i>
+
+<h5>
+
+Press Conferences
+
+</h5>
+
+<p>
+
+Record important interviews,
+press meets and awareness
+campaign announcements.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Helpful Guidelines -->
+
+<div class="card mt-5 border-0 bg-light">
+
+<div class="card-body">
+
+<h4 class="text-success">
+
+<i class="fas fa-lightbulb"></i>
+
+Media Management Tips
+
+</h4>
+
+<ul class="mb-0">
+
+<li>
+
+Use clear and meaningful titles for each media article.
+
+</li>
+
+<li>
+
+Verify that the website URL is valid before publishing.
+
+</li>
+
+<li>
+
+Regularly update media coverage after every NGO event.
+
+</li>
+
+<li>
+
+Include news related to education, healthcare, tree plantation,
+women empowerment and community development.
+
+</li>
+
+<li>
+
+Remove outdated or broken links to keep the website updated.
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= GALLERY IMAGE MANAGEMENT ================= -->
+
+<section id="gallery" class="mt-5">
+
+<div class="card border-0 shadow-lg">
+
+<div class="card-header bg-warning">
+
+<h3 class="mb-0">
+
+<i class="fas fa-images me-2"></i>
+
+Gallery Image Management
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<!-- Gallery Information -->
+
+<div class="alert alert-warning border-0">
+
+<h5>
+
+<i class="fas fa-circle-info"></i>
+
+Gallery Information
+
+</h5>
+
+<p class="mb-0">
+
+Upload high-quality images from NGO activities,
+medical camps, education programs,
+tree plantation drives,
+food distribution,
+women empowerment
+and volunteer events.
+
+</p>
+
+</div>
+
+<!-- Upload Form -->
+
+<h4 class="text-warning mb-4">
+
+<i class="fas fa-upload"></i>
+
+Upload New Image
+
+</h4>
+
+<form
+method="POST"
+action="/upload_image"
+enctype="multipart/form-data">
+
+<div class="row">
+
+<div class="col-lg-9 mb-3">
+
+<label class="form-label fw-bold">
+
+Select Image
+
+</label>
+
+<input
+type="file"
+name="image"
+class="form-control"
+accept="image/*"
+required>
+
+</div>
+
+<div class="col-lg-3 mb-3 d-grid">
+
+<label class="form-label text-white">
+
+Upload
+
+</label>
+
+<button
+type="submit"
+class="btn btn-warning">
+
+<i class="fas fa-cloud-upload-alt"></i>
+
+Upload
+
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+<hr class="my-5">
+
+<!-- Uploaded Images -->
+
+<h4 class="text-primary mb-4">
+
+<i class="fas fa-camera"></i>
+
+Uploaded Gallery Images
+
+</h4>
+
+<div class="row g-4">
+
+{% if gallery %}
+
+{% for img in gallery %}
+
+<div class="col-lg-3 col-md-4 col-sm-6">
+
+<div class="card border-0 shadow h-100">
+
+<img
+src="{{ url_for('static', filename='uploads/' + img.image) }}"
+class="card-img-top"
+style="height:220px;object-fit:cover;">
+
+<div class="card-body text-center">
+
+<h6 class="text-primary">
+
+NGO Activity Image
+
+</h6>
+
+<p class="text-muted small">
+
+Helping Hands NGO
+
+</p>
+
+<a
+href="/delete_image/{{ loop.index0 }}"
+class="btn btn-danger btn-sm">
+
+<i class="fas fa-trash"></i>
+
+Delete
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<div class="col-12">
+
+<div class="text-center py-5 bg-light rounded shadow">
+
+<i class="fas fa-image fa-5x text-warning mb-4"></i>
+
+<h3>
+
+No Images Uploaded Yet
+
+</h3>
+
+<p class="text-muted">
+
+Start building your gallery by uploading photographs
+from NGO activities, awareness campaigns,
+health camps, educational programs
+and volunteer events.
+
+</p>
+
+</div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+<hr class="my-5">
+
+<!-- Gallery Categories -->
+
+<h4 class="text-success mb-4">
+
+<i class="fas fa-folder-open"></i>
+
+Suggested Gallery Categories
+
+</h4>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="card border-0 bg-light h-100">
+
+<div class="card-body text-center">
+
+<i class="fas fa-graduation-cap fa-3x text-primary mb-3"></i>
+
+<h5>
+
+Education
+
+</h5>
+
+<p>
+
+School support,
+book distribution
+and digital learning.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 bg-light h-100">
+
+<div class="card-body text-center">
+
+<i class="fas fa-heartbeat fa-3x text-danger mb-3"></i>
+
+<h5>
+
+Healthcare
+
+</h5>
+
+<p>
+
+Medical camps,
+blood donation
+and health awareness.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 bg-light h-100">
+
+<div class="card-body text-center">
+
+<i class="fas fa-tree fa-3x text-success mb-3"></i>
+
+<h5>
+
+Environment
+
+</h5>
+
+<p>
+
+Tree plantation,
+cleanliness drives
+and green campaigns.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card border-0 bg-light h-100">
+
+<div class="card-body text-center">
+
+<i class="fas fa-users fa-3x text-warning mb-3"></i>
+
+<h5>
+
+Volunteers
+
+</h5>
+
+<p>
+
+Community service,
+food distribution
+and awareness events.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="my-5">
+
+<!-- Gallery Guidelines -->
+
+<div class="card border-0 bg-light">
+
+<div class="card-body">
+
+<h4 class="text-warning">
+
+<i class="fas fa-lightbulb"></i>
+
+Gallery Upload Guidelines
+
+</h4>
+
+<ul class="mb-0">
+
+<li>
+
+Upload clear, high-resolution images.
+
+</li>
+
+<li>
+
+Use photographs related to NGO activities only.
+
+</li>
+
+<li>
+
+Avoid duplicate or blurry images.
+
+</li>
+
+<li>
+
+Upload images from education, healthcare,
+environment, women empowerment,
+food distribution and volunteer programs.
+
+</li>
+
+<li>
+
+Regularly update the gallery after every event.
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= VIDEO MANAGEMENT ================= -->
+
+<section id="videos" class="mt-5">
+
+<div class="card border-0 shadow-lg">
+
+<div class="card-header bg-danger text-white py-3">
+
+<h3 class="mb-0">
+
+<i class="fas fa-video me-2"></i>
+
+Video Management
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<div class="alert alert-danger border-0">
+
+<h5>
+
+<i class="fas fa-circle-info"></i>
+
+Video Information
+
+</h5>
+
+<p class="mb-0">
+
+Add YouTube Embed URLs of NGO awareness campaigns,
+health camps, volunteer activities,
+educational programs and success stories.
+
+</p>
+
+</div>
+
+<h4 class="text-danger mb-4">
+
+<i class="fas fa-plus-circle"></i>
+
+Add New Video
+
+</h4>
+
+<form method="POST" action="/add_video">
+
+<div class="row">
+
+<div class="col-lg-10 mb-3">
+
+<label class="form-label fw-bold">
+
+YouTube Embed URL
+
+</label>
+
+<input
+type="text"
+name="video_url"
+class="form-control"
+placeholder="https://www.youtube.com/embed/XXXXXXXX"
+required>
+
+</div>
+
+<div class="col-lg-2 mb-3 d-grid">
+
+<label class="form-label text-white">
+
+Add
+
+</label>
+
+<button
+type="submit"
+class="btn btn-danger">
+
+<i class="fas fa-plus"></i>
+
+Add
+
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+<hr class="my-5">
+
+<h4 class="text-primary mb-4">
+
+<i class="fas fa-film"></i>
+
+Uploaded Videos
+
+</h4>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-hover align-middle">
+
+<thead class="table-danger">
+
+<tr>
+
+<th width="70">#</th>
+
+<th>Video URL</th>
+
+<th width="150">Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% if videos %}
+
+{% for video in videos %}
+
+<tr>
+
+<td>
+
+<strong>{{ loop.index }}</strong>
+
+</td>
+
+<td>
+
+<a
+href="{{ video.video_url }}"
+target="_blank"
+class="text-decoration-none">
+
+{{ video.video_url }}
+
+</a>
+
+</td>
+
+<td class="text-center">
+
+<a
+href="/delete_video/{{ loop.index0 }}"
+class="btn btn-danger btn-sm">
+
+<i class="fas fa-trash"></i>
+
+Delete
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+{% else %}
+
+<tr>
+
+<td colspan="3">
+
+<div class="text-center py-5">
+
+<i class="fas fa-video fa-5x text-danger mb-3"></i>
+
+<h4>
+
+No Videos Added
+
+</h4>
+
+<p class="text-muted">
+
+Upload YouTube videos to showcase NGO activities,
+awareness campaigns and community events.
+
+</p>
+
+</div>
+
+</td>
+
+</tr>
+
+{% endif %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= DASHBOARD SUMMARY ================= -->
+
+<section class="mt-5">
+
+<div class="card border-0 shadow-lg">
+
+<div class="card-header bg-dark text-white">
+
+<h3>
+
+<i class="fas fa-chart-pie"></i>
+
+Dashboard Overview
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="card bg-primary text-white">
+
+<div class="card-body text-center">
+
+<i class="fas fa-newspaper fa-3x mb-3"></i>
+
+<h2>{{ press|length }}</h2>
+
+<p>Total Press Releases</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card bg-success text-white">
+
+<div class="card-body text-center">
+
+<i class="fas fa-tv fa-3x mb-3"></i>
+
+<h2>{{ coverage|length }}</h2>
+
+<p>Media Coverage</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card bg-warning">
+
+<div class="card-body text-center">
+
+<i class="fas fa-images fa-3x mb-3"></i>
+
+<h2>{{ gallery|length }}</h2>
+
+<p>Gallery Images</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card bg-danger text-white">
+
+<div class="card-body text-center">
+
+<i class="fas fa-video fa-3x mb-3"></i>
+
+<h2>{{ videos|length }}</h2>
+
+<p>Videos</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ADMIN GUIDELINES ================= -->
+
+<section class="mt-5 mb-5">
+
+<div class="card border-0 shadow-lg">
+
+<div class="card-header bg-info text-white">
+
+<h3>
+
+<i class="fas fa-lightbulb"></i>
+
+Administrator Guidelines
+
+</h3>
+
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-6">
+
+<h5 class="text-primary">
+
+Content Management
+
+</h5>
+
+<ul>
+
+<li>Publish accurate press releases.</li>
+
+<li>Verify media links before adding.</li>
+
+<li>Upload clear, high-quality images.</li>
+
+<li>Use YouTube Embed URLs only.</li>
+
+<li>Keep gallery updated after every event.</li>
+
+</ul>
+
+</div>
+
+<div class="col-md-6">
+
+<h5 class="text-success">
+
+Best Practices
+
+</h5>
+
+<ul>
+
+<li>Review content before publishing.</li>
+
+<li>Delete outdated information.</li>
+
+<li>Keep website content fresh.</li>
+
+<li>Use meaningful titles.</li>
+
+<li>Maintain a professional appearance.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-dark text-white py-4 mt-5">
+
+<div class="container text-center">
+
+<h4>
+
+Helping Hands NGO Management System
+
+</h4>
+
+<p>
+
+Admin Dashboard for Media & Content Management
+
+</p>
+
+<hr>
+
+<p>
+
+© 2026 Helping Hands NGO. All Rights Reserved.
+
+</p>
+
+
+<div class="mt-3">
+
+<a href="/" class="btn btn-success me-2">
+
+<i class="fas fa-home"></i>
+
+Visit Website
+
+</a>
+
+<a href="/logout" class="btn btn-danger">
+
+<i class="fas fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>
